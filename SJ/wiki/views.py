@@ -22,8 +22,27 @@ def Bonamana(request):
 def MAMACITA(request):
     return render(request, 'wiki/MAMACITA.html')
 def LeeTeuk(request):
-    return render(request, 'wili/LeeTeuk.html')
-
+    return render(request, 'wiki/LeeTeuk.html')
+def HeeChul(request):
+    return render(request, 'wiki/HeeChul.html')
+def YeSung(request):
+    return render(request, 'wiki/YeSung.html')
+def KangIn(request):
+    return render(request, 'wiki/KangIn.html')
+def ShinDong(request):
+    return render(request, 'wiki/ShinDong.html')
+def SungMin(request):
+    return render(request, 'wiki/SungMin.html')
+def EunHyuk(request):
+    return render(request, 'wiki/EunHyuk.html')
+def SiWon(request):
+    return render(request, 'wiki/SiWon.html')
+def DongHae(request):
+    return render(request, 'wiki/DongHae.html')
+def RyeoWook(request):
+    return render(request, 'wiki/RyeoWook.html')
+def KyuHyun(request):
+    return render(request, 'wiki/KyuHyun.html')
 
 def about(request):
     context = {}
