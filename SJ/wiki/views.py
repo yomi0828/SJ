@@ -4,9 +4,9 @@ from django.core.urlresolvers import reverse
 from wiki.models import Category, Page
 
 def wiki(request):
-    categories = Category.objects.order_by('-likes')
+    categories = Category.objects.all()
     context = {'categories':categories}
-    return render(request, 'wiki/wiki.html')
+    return render(request, 'wiki/wiki.html', context)
 def 歷年專輯介紹(request):        
     return render(request, 'wiki/歷年專輯介紹.html')
 def 成員(request):
