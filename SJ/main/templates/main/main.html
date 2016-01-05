@@ -5,16 +5,27 @@
 <title>10314146</title>
 <meta charset=utf-8>
 </head>
-<body>
+<body style="background-color:MistyRose;">
 <h1>簡介</h1>
 
+{% if messages %}
+ {% for message in messages %}
+ <p {% if message.tags %} class={{message.tags}} {% endif %}>{{message}}</p>
+ {% endfor %}
+{% endif %}
+<h1><a href={% url 'wiki:歷年專輯介紹' %}>歷年專輯介紹 Album</a><br></h1>
 
-<h1><a href={% url 'wiki:歷年專輯介紹' %}>歷年專輯介紹</a><br></h1>
+<h1><a href={% url 'wiki:成員' %}>成員 Member</a><br></h1>
 
-<h1><a href={% url 'wiki:成員' %}>成員</a><br></h1>
+<h1><a href={% url 'wiki:wiki' %}>喜愛的成員 Favorite</a><br></h1>
 
-<h1><a href={% url 'wiki:wiki' %}>喜愛的成員</a><br></h1>
+{% if user.is_authenticated %}
+ <p><a href={% url 'account:userLogout' %}>登出 ({{user.username}})</a></p>
+{% else %}
+<h1><p><a href={% url 'account:register' %}>註冊</a></p></h1>
 
+<h1><p><a href={% url 'account:userLogin' %}>登入</a></p></h1>
 
+{% endif %}
 </body>
 </html>

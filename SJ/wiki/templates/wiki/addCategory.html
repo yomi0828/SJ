@@ -1,0 +1,20 @@
+<!doctype html>
+{% load staticfiles %}
+
+<html>
+<head>
+<title>10314146</title>
+<meta charset=utf-8>
+<link rel=stylesheet href={% static 'main/css/main.css' %}>
+</head>
+<body style="background-color:MistyRose;">
+<h1>新增</h1>
+<form method=post action={% url 'wiki:addCategory' %}>
+ {% csrf_token %}
+ {{form.as_p}}
+ <input type=submit value=送出>
+</form>
+<br>
+<h1><p><a href={% url 'wiki:wiki' %}>回上一頁</a></p></h1>
+</body>
+</html>
